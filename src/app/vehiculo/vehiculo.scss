@@ -1,0 +1,211 @@
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #34495e;
+$shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+
+// Contenedor principal
+.container-fluid {
+  padding: 1.5rem;
+}
+
+// Títulos
+h2 {
+  color: $primary-color;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+h5 {
+  color: $secondary-color;
+  font-weight: 500;
+}
+
+// Cards
+.card {
+  border: none;
+  box-shadow: $shadow-medium;
+  border-radius: $border-radius;
+
+  .card-header {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+    h5 {
+      color: white;
+      margin: 0;
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+// Formularios
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-select,
+.form-control {
+  border-radius: 6px;
+  
+  &:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  }
+}
+
+// Tabla
+.table-responsive {
+  box-shadow: $shadow-light;
+  border-radius: $border-radius;
+  overflow: hidden;
+  margin-top: 1rem;
+
+  .table {
+    margin-bottom: 0;
+
+    thead {
+      th {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        letter-spacing: 0.5px;
+        padding: 1rem 0.75rem;
+      }
+    }
+
+    tbody {
+      td {
+        vertical-align: middle;
+        padding: 0.75rem;
+      }
+
+      tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.025);
+        }
+      }
+    }
+  }
+}
+
+// Botones
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 6px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-group {
+  .btn {
+    padding: 0.25rem 0.5rem;
+    margin: 0 2px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    i {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+// Badges
+.badge {
+  font-size: 0.875rem;
+  padding: 0.35em 0.65em;
+  font-weight: 500;
+
+  &.bg-success {
+    background-color: #28a745 !important;
+  }
+
+  &.bg-warning {
+    background-color: #ffc107 !important;
+  }
+
+  &.bg-danger {
+    background-color: #dc3545 !important;
+  }
+}
+
+// Spinner
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+// Alertas
+.alert {
+  border-radius: $border-radius;
+  
+  &.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    color: #842029;
+  }
+
+  &.alert-info {
+    background-color: #cff4fc;
+    border-color: #b6effb;
+    color: #056072;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.875rem;
+
+    thead th,
+    tbody td {
+      padding: 0.5rem;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .btn {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    padding: 1rem;
+  }
+
+  .col-md-4 {
+    margin-bottom: 0.75rem;
+  }
+}
