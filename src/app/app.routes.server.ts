@@ -1,8 +1,4 @@
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { ServerRoute } from '@angular/ssr';
 
-export const serverRoutes: ServerRoute[] = [
-  {
-    path: '**',
-    renderMode: RenderMode.Prerender
-  }
-];
+// No prerendering routes configured here to avoid build errors for parameterized routes.
+export const serverRoutes: ServerRoute[] = [];
