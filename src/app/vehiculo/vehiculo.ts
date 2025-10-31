@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VehiculoService } from '../Service/vehiculo.service';
-import { vehiculo } from '../clases/vehiculo';
+import { Vehiculo } from '../clases/vehiculo';
 
 @Component({
   selector: 'app-vehiculo',
@@ -13,8 +13,8 @@ import { vehiculo } from '../clases/vehiculo';
 })
 export class VehiculoComponent implements OnInit {
   
-  vehiculos: vehiculo[] = [];
-  vehiculosFiltrados: vehiculo[] = [];
+  vehiculos: Vehiculo[] = [];
+  vehiculosFiltrados: Vehiculo[] = [];
   
   filtroMarca: string = '';
   filtroModelo: string = '';
@@ -83,7 +83,7 @@ export class VehiculoComponent implements OnInit {
   }
 
   aplicarFiltros(): void {
-    this.vehiculosFiltrados = this.vehiculos.filter(vehiculo => {
+  this.vehiculosFiltrados = this.vehiculos.filter(vehiculo => {
       const cumpleMarca = !this.filtroMarca || 
         (vehiculo.marca && vehiculo.marca.toLowerCase().includes(this.filtroMarca.toLowerCase()));
       

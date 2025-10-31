@@ -1,1 +1,17 @@
-<router-outlet />
+<header class="topbar">
+	<nav class="nav">
+		<a routerLink="/catalog" class="nav-link">Catálogo</a>
+		<a routerLink="/vehiculos" class="nav-link">Vehículos</a>
+		<a routerLink="/filtros" class="nav-link">Filtros</a>
+		<a routerLink="/reserva" class="nav-link">Reservar</a>
+		<a routerLink="/historial" class="nav-link">Historial</a>
+		<a routerLink="/cancelacion" class="nav-link">Cancelar</a>
+		<a routerLink="/admin" class="nav-link">Admin</a>
+		<a routerLink="/login" class="nav-link login">Login</a>
+	</nav>
+</header>
+
+<main class="content">
+	<router-outlet></router-outlet>
+</main>
+

@@ -1,7 +1,7 @@
-import { categoria } from "./categoria";
+import { Categoria } from "./categoria";
 
-export class tipoVehiculo{
+export class TipoVehiculo {
     idTipoVehiculo: string = '';
     nombre: string = '';
-    categoria: categoria = new categoria
+    categoria: Categoria = new Categoria();
 }

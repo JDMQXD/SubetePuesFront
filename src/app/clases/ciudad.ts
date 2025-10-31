@@ -1,7 +1,7 @@
-import { departamento } from "./departamento";
+import { Departamento } from "./departamento";
 
-export class ciudad{
+export class Ciudad {
     idCiudad: string = '';
     nombre: string = '';
-    departamento: departamento = new departamento
+    departamento: Departamento = new Departamento();
 }

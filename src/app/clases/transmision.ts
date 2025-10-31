@@ -1,6 +1,5 @@
-export class transmision{
-
-    idTrasnmision: string = '';
+export class Transmision {
+    // Renombrado a idTransmision (corrección ortográfica)
+    idTransmision: string = '';
     nombre: string = '';
-
 }

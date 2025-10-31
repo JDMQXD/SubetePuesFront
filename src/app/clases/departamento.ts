@@ -1,5 +1,6 @@
-export class departamento {
-    idDpartamento: string = '';
+export class Departamento {
+    // Renombrado a idDepartamento para consistencia
+    idDepartamento: string = '';
     nombre: string = '';
 
 }
