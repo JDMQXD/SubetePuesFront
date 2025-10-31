@@ -1,0 +1,13 @@
+<div class="catalogo">
+  <mat-card *ngFor="let c of cars" class="vehiculo-card">
+    <img [src]="c.image" alt="{{c.model}}">
+    <div class="contenido">
+      <h3>{{ c.brand }} {{ c.model }}</h3>
+      <p>{{ c.description }}</p>
+      <p class="precio">💰 {{ c.price | currency:'USD' }}/día</p>
+      <button mat-raised-button color="primary" [routerLink]="['/vehiculos', c.id]">
+        Ver detalles
+      </button>
+    </div>
+  </mat-card>
+</div>

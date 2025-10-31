@@ -1,0 +1,16 @@
+.reserva {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  mat-card {
+    width: 400px;
+    text-align: center;
+    padding: 2rem;
+  }
+  .botones {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// 💠 Paleta personalizada
+$subete-primary: mat.define-palette(mat.$indigo-palette, 600);
+$subete-accent: mat.define-palette(mat.$amber-palette, 500);
+$subete-warn: mat.define-palette(mat.$red-palette);
+
+// 🎨 Tema oscuro elegante
+$subete-theme: mat.define-dark-theme((
+  color: (
+    primary: $subete-primary,
+    accent: $subete-accent,
+    warn: $subete-warn,
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Roboto, sans-serif',
+    $headline-6: (font-weight: 600),
+    $button: (text-transform: none, font-weight: 500),
+  ),
+));
+
+// 🔥 Aplica el tema globalmente
+@include mat.all-component-themes($subete-theme);
+@include mat.typography-hierarchy($subete-theme);
+
+// 🌐 Estilos globales
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: #121212;
+  color: #f5f5f5;
+}
+
+a {
+  color: mat.get-color-from-palette($subete-accent, 400);
+  text-decoration: none;
+}
+
+button {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  letter-spacing: .5px;
+}
+
+mat-card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  }
+}

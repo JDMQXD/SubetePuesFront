@@ -1,0 +1,11 @@
+<div class="reserva" *ngIf="vehiculo">
+  <mat-card>
+    <h2>Confirmar reserva</h2>
+    <p>Vehículo: <strong>{{ vehiculo.brand }} {{ vehiculo.model }}</strong></p>
+    <p>Precio por día: {{ vehiculo.price | currency:'USD' }}</p>
+    <div class="botones">
+      <button mat-raised-button color="primary" (click)="confirmar()">Confirmar</button>
+      <button mat-button [routerLink]="['/vehiculos', vehiculo.id]">Cancelar</button>
+    </div>
+  </mat-card>
+</div>

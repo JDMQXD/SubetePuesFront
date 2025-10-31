@@ -1,0 +1,14 @@
+<div class="historial">
+  <mat-card>
+    <h2>Historial de reservas</h2>
+    <mat-list *ngIf="reservas.length > 0; else empty">
+      <mat-list-item *ngFor="let r of reservas">
+        <div matListItemTitle>{{ r.vehiculo.brand }} {{ r.vehiculo.model }}</div>
+        <div matListItemLine>📅 {{ r.date | date:'medium' }}</div>
+      </mat-list-item>
+    </mat-list>
+    <ng-template #empty>
+      <p class="vacio">No tienes reservas registradas.</p>
+    </ng-template>
+  </mat-card>
+</div>

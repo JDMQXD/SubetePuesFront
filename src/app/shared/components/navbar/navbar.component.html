@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="logo" routerLink="/vehiculos">🚗 Súbete Pues</span>
+
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/vehiculos">Vehículos</a>
+  <a mat-button *ngIf="isAuth()" routerLink="/historial">Historial</a>
+
+  <button mat-raised-button color="accent" *ngIf="!isAuth()" routerLink="/login">
+    <mat-icon>login</mat-icon>&nbsp; Iniciar sesión
+  </button>
+
+  <button mat-raised-button color="warn" *ngIf="isAuth()" (click)="logout()">
+    <mat-icon>logout</mat-icon>&nbsp; Cerrar sesión
+  </button>
+</mat-toolbar>

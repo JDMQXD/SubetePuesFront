@@ -1,0 +1,13 @@
+.historial {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  mat-card {
+    width: 500px;
+    padding: 1.5rem;
+  }
+  .vacio {
+    text-align: center;
+    color: #777;
+  }
+}
