@@ -1,5 +1,5 @@
 
-export class tipoDocumento{
+export class TipoDocumento {
     idDocumento: string = '';
     tipoDocumento: string = '';
 }

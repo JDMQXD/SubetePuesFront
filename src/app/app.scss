@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+}
+
+.topbar { background:#0d6efd; color:#fff; padding:8px 12px }
+.nav { display:flex; gap:12px; align-items:center }
+.nav-link { color:#fff; text-decoration:none; padding:6px 10px; border-radius:4px }
+.nav-link:hover { background: rgba(255,255,255,0.08) }
+.nav-link.login { margin-left:auto; background: rgba(255,255,255,0.12) }
+.content { padding:12px }
+

@@ -1,19 +1,19 @@
-import { ciudad } from "./ciudad";
-import { transmision } from "./transmision";
-import { propietario } from "./propietario";
-import { tipoVehiculo } from "./tipoVehiculo";
-import { disponibilidad } from "./disponibilidad";
+import { Ciudad } from "./ciudad";
+import { Transmision } from "./transmision";
+import { Propietario } from "./propietario";
+import { TipoVehiculo } from "./tipoVehiculo";
+import { Disponibilidad } from "./disponibilidad";
 
-export class vehiculo{
+export class Vehiculo {
     idVehiculo: string = '';
-    transmision: transmision = new transmision;
-    ciudad: ciudad = new ciudad;
-    propietario: propietario = new propietario;
-    tipoVehiculo: tipoVehiculo = new tipoVehiculo;
-    disponibilidad: disponibilidad = new disponibilidad;
+    transmision: Transmision = new Transmision();
+    ciudad: Ciudad = new Ciudad();
+    propietario: Propietario = new Propietario();
+    tipoVehiculo: TipoVehiculo = new TipoVehiculo();
+    disponibilidad: Disponibilidad = new Disponibilidad();
     modelo: string = '';
     marca: string = '';
     espeficicacion: string = '';
     estadoDeCuenta: string = '';
-    fechaRegistro: Date = new Date;
+    fechaRegistro: Date = new Date();
 }
