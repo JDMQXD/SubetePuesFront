@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { VehiculoService } from '../Service/vehiculo.service';
 import { Vehiculo } from '../clases/vehiculo';
 
 @Component({
   selector: 'app-vehiculo',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './vehiculo.html',
   styleUrls: ['./vehiculo.scss']
 })
