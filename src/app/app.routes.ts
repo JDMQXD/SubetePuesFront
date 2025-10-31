@@ -12,6 +12,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'catalog', pathMatch: 'full' },
     { path: 'catalog', component: CatalogComponent },
     { path: 'vehiculos', component: VehiculoComponent },
+    { path: 'vehiculos/:id', loadComponent: () => import('./pages/vehiculo-detail/vehiculo-detail').then(m => m.VehiculoDetailComponent) },
     { path: 'filtros', component: FiltrosComponent },
     { path: 'reserva', component: ReservaComponent },
     { path: 'cancelacion', component: CancelacionComponent },
