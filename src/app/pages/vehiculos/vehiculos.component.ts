@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
-import { VehiculosService, Vehiculo } from '../../core/services/vehiculos.service';
-import { NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-vehiculos',
   standalone: true,
-  imports: [NgFor, RouterLink, MatCardModule, MatButtonModule],
+  imports: [CommonModule, CurrencyPipe, MatCardModule, MatButtonModule, RouterModule],
   templateUrl: './vehiculos.component.html',
   styleUrls: ['./vehiculos.component.scss']
 })
 export class VehiculosComponent {
-  cars: Vehiculo[] = [];
-  constructor(private vs: VehiculosService) {
-    this.cars = this.vs.list();
-  }
+  vehiculos = [
+  vehiculos = [
+    { id: 1, brand: 'Toyota', model: 'Corolla', price: 180, img: 'https://cdn.motor1.com/images/mgl/Vzkk1/s3/toyota-corolla-gr-s-2023.jpg' },
+    { id: 2, brand: 'Mazda', model: 'CX-5', price: 250, img: 'https://cdn.motor1.com/images/mgl/3e8xZ/s1/mazda-cx-5.jpg' },
+    { id: 3, brand: 'Chevrolet', model: 'Onix', price: 150, img: 'https://cdn.motor1.com/images/mgl/YMM6k/s3/chevrolet-onix.jpg' }
+  ];
+
+  ];
 }

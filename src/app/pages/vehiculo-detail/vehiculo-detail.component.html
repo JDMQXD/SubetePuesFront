@@ -1,14 +1,13 @@
 <div class="detalle" *ngIf="vehiculo">
-  <mat-card>
-    <img [src]="vehiculo.image" alt="{{vehiculo.model}}">
-    <div class="info">
+  <mat-card class="detalle-card">
+    <img mat-card-image [src]="vehiculo.img" alt="{{ vehiculo.model }}">
+    <mat-card-content>
       <h2>{{ vehiculo.brand }} {{ vehiculo.model }}</h2>
-      <p>{{ vehiculo.description }}</p>
       <p><strong>Precio por día:</strong> {{ vehiculo.price | currency:'USD' }}</p>
-      <div class="botones">
-        <button mat-raised-button color="accent" (click)="reservar()">Reservar</button>
-        <button mat-button routerLink="/vehiculos">Volver</button>
-      </div>
-    </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="reservar()">Reservar</button>
+      <button mat-button routerLink="/vehiculos">Volver</button>
+    </mat-card-actions>
   </mat-card>
 </div>

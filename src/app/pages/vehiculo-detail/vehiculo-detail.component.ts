@@ -1,31 +1,26 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { VehiculosService, Vehiculo } from '../../core/services/vehiculos.service';
-import { NgIf } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-vehiculo-detail',
   standalone: true,
-  imports: [NgIf, RouterLink, MatCardModule, MatButtonModule],
+  imports: [CommonModule, CurrencyPipe, MatCardModule, MatButtonModule, RouterModule],
   templateUrl: './vehiculo-detail.component.html',
   styleUrls: ['./vehiculo-detail.component.scss']
 })
 export class VehiculoDetailComponent {
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
-  private vs = inject(VehiculosService);
-
-  vehiculo: Vehiculo | null = null;
-
-  constructor() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.vehiculo = this.vs.getById(id);
-  }
+  @Input() vehiculo = {
+    id: 1,
+    brand: 'Toyota',
+    model: 'Corolla',
+    price: 180,
+    img: 'https://cdn.motor1.com/images/mgl/Vzkk1/s3/toyota-corolla-gr-s-2023.jpg'
+  };
 
   reservar() {
-    if (!this.vehiculo) return;
-    this.router.navigate(['/reservar', this.vehiculo.id]);
+    alert(`🚗 Reserva iniciada para ${this.vehiculo.brand} ${this.vehiculo.model}`);
   }
 }

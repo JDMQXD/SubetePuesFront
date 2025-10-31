@@ -1,37 +1,25 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink, Router } from '@angular/router';
-import { VehiculosService, Vehiculo } from '../../core/services/vehiculos.service';
-import { ReservasService } from '../../core/services/reservas.service';
-import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-reserva',
   standalone: true,
-  imports: [NgIf, RouterLink, MatCardModule, MatButtonModule, MatSnackBarModule],
+  imports: [CommonModule, CurrencyPipe, MatCardModule, MatButtonModule, RouterModule],
   templateUrl: './reserva.component.html',
   styleUrls: ['./reserva.component.scss']
 })
 export class ReservaComponent {
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
-  private vs = inject(VehiculosService);
-  private rs = inject(ReservasService);
-  private snack = inject(MatSnackBar);
-
-  vehiculo: Vehiculo | null = null;
-
-  constructor() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.vehiculo = this.vs.getById(id);
-  }
+  vehiculo = {
+    id: 1,
+    brand: 'Mazda',
+    model: 'CX-5',
+    price: 250
+  };
 
   confirmar() {
-    if (!this.vehiculo) return;
-    this.rs.crear(this.vehiculo);
-    this.snack.open('✅ Reserva confirmada', 'OK', { duration: 1500 });
-    this.router.navigate(['/historial']);
+    alert(`✅ Reserva confirmada para ${this.vehiculo.brand} ${this.vehiculo.model}`);
   }
 }

@@ -1,13 +1,18 @@
-<div class="catalogo">
-  <mat-card *ngFor="let c of cars" class="vehiculo-card">
-    <img [src]="c.image" alt="{{c.model}}">
-    <div class="contenido">
-      <h3>{{ c.brand }} {{ c.model }}</h3>
-      <p>{{ c.description }}</p>
-      <p class="precio">💰 {{ c.price | currency:'USD' }}/día</p>
-      <button mat-raised-button color="primary" [routerLink]="['/vehiculos', c.id]">
-        Ver detalles
-      </button>
-    </div>
-  </mat-card>
+<div class="vehiculos-container">
+  <h1 class="titulo">🚗 Vehículos disponibles</h1>
+
+  <div class="vehiculos-grid">
+    <mat-card *ngFor="let v of vehiculos" class="vehiculo-card">
+      <img mat-card-image [src]="v.img" alt="{{ v.brand }} {{ v.model }}">
+      <mat-card-content>
+        <h2>{{ v.brand }} {{ v.model }}</h2>
+        <p class="precio">💰 {{ v.price | currency:'USD' }}/día</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [routerLink]="['/vehiculos', v.id]">
+          Ver detalle
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
