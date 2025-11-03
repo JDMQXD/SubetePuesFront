@@ -1,0 +1,21 @@
+<div class="container mt-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">Iniciar sesión</h2>
+
+  <form (ngSubmit)="onLogin()">
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input type="email" id="correo" class="form-control" [(ngModel)]="correo" name="correo" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="text-danger text-center mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

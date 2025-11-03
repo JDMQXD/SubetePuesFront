@@ -1,0 +1,9 @@
+<div class="container mt-5 text-center">
+  <h2> Panel de Administrador</h2>
+  <p>Bienvenido, <strong>{{ usuario }}</strong></p>
+  <p>Tu rol es: <span class="badge bg-danger">{{ rol }}</span></p>
+
+  <div class="mt-4">
+    <button class="btn btn-outline-danger" (click)="logout()">Cerrar sesión</button>
+  </div>
+</div>
